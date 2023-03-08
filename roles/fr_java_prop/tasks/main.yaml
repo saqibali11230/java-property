@@ -1,0 +1,26 @@
+---
+- name: Copy java.properties and create backup for dt.
+  ansible.builtin.copy:
+    src: java.properties.am
+    dest: "{{ file_path_dt }}"
+    owner: "{{ owner }}"
+    group: "{{ group }}"
+    mode: "{{ mode }}"
+    backup: true
+  when: dt
+
+- name: Copy java.properties and create backup for am.
+  ansible.builtin.copy:
+    src: java.properties.am
+    dest: "{{ file_path_am }}"
+    owner: "{{ owner }}"
+    group: "{{ group }}"
+    mode: "{{ mode }}"
+    backup: true
+  when: not dt
+
+- name: Restart service
+  ansible.builtin.systemd:
+    state: restarted
+    daemon_reload: true
+    name: "{{ service_name }}"

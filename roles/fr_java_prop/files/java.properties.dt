@@ -1,0 +1,15 @@
+# Specify to use the -client argument for all the command-lines that have not
+# an associated property defined:
+# default.java-args=-client
+
+default.java-home=/usr/lib/jvm/java-8-openjdk-amd64/jre
+default.java-args=-server -Xms256m -Xmx256m
+import-ldif.offline.java-args=-server
+rebuild-index.offline.java-args=-server
+start-ds.java-args=-server -XX:+CrashOnOutOfMemoryError -XX:+UseCompressedOops -XX:MaxRAMPercentage=70.0 -XX:+UseConcMarkSweepGC -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintGCDateStamps -XX:+PrintGCCause -Xloggc:/opt/opendj/logs/gc.log -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=5 -XX:GCLogFileSize=20M
+ldifdiff.java-args=-server
+addrate.java-args=-server
+authrate.java-args=-server
+modrate.java-args=-server
+searchrate.java-args=-server
+makeldif.java-args=-server

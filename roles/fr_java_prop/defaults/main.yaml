@@ -1,0 +1,6 @@
+file_path_dt: "/opt/opendj/config/java.properties"
+file_path_am: "/opt/opendj/config/java.properties"
+owner: "forgerock"
+group: "forgerock"
+mode: "0644"
+service_name: "opendj"

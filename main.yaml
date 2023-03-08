@@ -1,0 +1,6 @@
+---
+- name: Update java properties file
+  hosts: all
+  become: true
+  roles:
+    - { role: fr_java_prop, tags: ["forgerock", "java_properties"] }
